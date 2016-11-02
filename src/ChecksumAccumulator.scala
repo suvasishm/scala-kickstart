@@ -20,9 +20,7 @@ object ChecksumAccumulator {
             cache(s)
         else {
             val acc = new ChecksumAccumulator
-            //s.foreach(acc.add(c.toByte))
-            for (c <- s)
-                acc.add(c.toByte)
+            for (c <- s) acc.add(c.toByte)
             val cs = acc.checksum()
             cache += (s -> cs)
             cs
